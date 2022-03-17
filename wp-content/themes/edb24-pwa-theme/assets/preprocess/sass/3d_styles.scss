@@ -1,0 +1,322 @@
+:root {
+    --scenePerspective: 1;
+    --scenePerspectiveOriginX: 50;
+    --itemZ: 2; // Gap between each cards
+    --cameraSpeed: 900; // Where 1 is the fastest, this var is a multiplying factor of --scenePerspective and --filmZ
+    --cameraZ: 1700; // Initial camera position
+    --viewportHeight: 0; //Simulate Camera Getting Closer
+}
+
+@media only screen and (min-width: 600px) {
+    :root {
+        --cameraZ: 1700; // Initial camera position
+        --scenePerspectiveOriginY: 40;
+    }
+}
+@media only screen and (max-width: 600px) {
+    :root {
+        --cameraZ: 1000; // Initial camera position
+        --scenePerspectiveOriginY: 30;
+    }
+}
+
+/*
+    Microsoft Edge Currently have some implementation issues
+    for CSS 3D Elements. This code will likely change when 
+    they correct the bugs. Here is a link with more about the
+    issues: https://css-tricks.com/things-watch-working-css-3d/
+*/
+
+@supports (display: grid) and (not (-ms-ime-align: auto)) {
+    .main-header {
+        position: fixed;
+        z-index: 100;
+        width: 100vw;
+    }
+
+    //Scrolling Message
+    #scrolling_icon {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.9);
+        color: #efefef;
+        position: fixed;
+        font-weight: 600;
+        display: none;
+        flex-flow: column;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        align-items: center;
+        z-index: 1000000;
+        font-family: 'Orbitron';
+        top: 0px;
+        opacity: 1;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        transition: top 2s, opacity 0.7s;
+    }
+    .scrolling_message_text {
+        font-size: calc(42px + (80 - 42) * ((100vw - 600px) / (1600 - 600)));
+    }
+    .scrolling_icon_arrow {
+        font-size: calc(142px + (170 - 142) * ((100vw - 600px) / (1600 - 600)));
+    }
+    .scene_3d_wrapper {
+        height: calc(var(--viewportHeight) * 1px);
+    }
+
+    .scene_3d_container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
+        perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
+        will-change: perspective-origin;  //Allows Hardware-Accelerated CSS, so transitions are smoother
+        transform: translate3d(0,0,0);
+        
+        // Stars Background
+        background-color:black;
+        background-image:
+            radial-gradient(rgb(245, 216, 216), rgba(245, 216, 216,.2) 2px, transparent 40px),
+            radial-gradient(rgb(214, 235, 255), rgba(214, 235, 255,.15) 1px, transparent 30px),
+            radial-gradient(rgb(207, 255, 219), rgba(207, 255, 219,.1) 2px, transparent 40px),
+            radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+        background-size: 
+            550px 550px, 
+            350px 350px, 
+            250px 250px, 
+            150px 150px;
+        background-position: 
+            0 0, 
+            40px 60px, 
+            130px 270px, 
+            70px 100px;
+    }
+
+
+    .job_list_page {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        transform-style: preserve-3d;
+        transform: translateZ(calc(var(--cameraZ) * 1px));
+        will-change: transform;
+    }
+    .job_list_page .jobs {
+        font-family: Montserrat;
+        transform-style: preserve-3d;
+        position: absolute;
+        font-weight: 600;
+        color: #efefef;
+        width: 70%;
+        top: 30%;
+        padding: 25px;
+        transition: color 1s;
+    }
+    .job_list_page .jobs ul {
+        font-size: 17px;
+        list-style-type: "- ";
+        padding-left: 12px;
+    }
+    .job_list_page .jobs:before,
+    .job_list_page .jobs:after {
+        content:"";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        filter: blur(20px);
+        transition: filter 1s;
+        z-index: -1;
+    }
+
+    .job_list_page .jobs:hover {
+        color: #efefef;
+    }
+    .job_list_page .jobs:hover:before,
+    .job_list_page .jobs:hover:after {
+        filter: blur(40px);
+    }
+
+    .job_list_page .jobs,
+    .job_list_page .jobs:before,
+    .job_list_page .jobs:after {
+        border-radius: 10px;
+    }
+    @for $i from 1 through 10 {
+        .jobs:nth-child(#{$i}) {
+            transform: translate3D(
+                random(50) - 25 * 1%,
+                random(100) - 50* 1%,
+                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+                );
+        }
+    }
+
+    .jobs:nth-child(2n) {
+        left: 10vw;
+    }
+
+    .jobs:nth-child(2n + 1) {
+        right: 10vw;
+    }
+
+    .job_list_page .jobs:nth-child(1),
+    .job_list_page .jobs:nth-child(1):before,
+    .job_list_page .jobs:nth-child(1):after {
+        background: linear-gradient(45deg, #ff0057, #e64a19);
+    }
+    .job_list_page .jobs:nth-child(2),
+    .job_list_page .jobs:nth-child(2):before,
+    .job_list_page .jobs:nth-child(2):after {  
+        background: linear-gradient(45deg, #6db51a, #00bcd4);
+    }
+    .job_list_page .jobs:nth-child(3),
+    .job_list_page .jobs:nth-child(3):before,
+    .job_list_page .jobs:nth-child(3):after {  
+        background: linear-gradient(45deg, #e91e63, #5d02ff);
+    }
+    .job_list_page .jobs:nth-child(4),
+    .job_list_page .jobs:nth-child(4):before,
+    .job_list_page .jobs:nth-child(4):after {  
+        background: linear-gradient(45deg, #ff0000, #ffc107);
+    }
+
+    .job_list_page .jobs:nth-child(5),
+    .job_list_page .jobs:nth-child(5):before,
+    .job_list_page .jobs:nth-child(5):after {  
+        background: linear-gradient(45deg, #380036, #0CBABA);
+    }
+
+    .job_list_page .jobs:nth-child(6),
+    .job_list_page .jobs:nth-child(6):before,
+    .job_list_page .jobs:nth-child(6):after {  
+        background: linear-gradient(45deg, #B91372, #6B0F1A);
+    }
+
+    .job_list_page .jobs:nth-child(7),
+    .job_list_page .jobs:nth-child(7):before,
+    .job_list_page .jobs:nth-child(7):after {  
+        background: linear-gradient(45deg, #00c6fb, #005bea);
+    }
+
+    .job_list_page .jobs:nth-child(8),
+    .job_list_page .jobs:nth-child(8):before,
+    .job_list_page .jobs:nth-child(8):after {  
+        background: linear-gradient(45deg, #0250c5, #d43f8d);
+    }
+
+    .job_list_page .jobs:nth-child(9),
+    .job_list_page .jobs:nth-child(9):before,
+    .job_list_page .jobs:nth-child(9):after {  
+        background: linear-gradient(45deg, #617798, #5d5b5b);
+
+    }
+
+    .job_list_page .jobs:nth-child(10),
+    .job_list_page .jobs:nth-child(10):before,
+    .job_list_page .jobs:nth-child(10):after {  
+        background: linear-gradient(45deg, #16a085, #f4d03f);
+    }
+
+
+    @media only screen and (min-width: 600px) {
+        .job_list_page .jobs {
+            width: 45%;
+        }
+    }
+    @media only screen and (min-width: 2000px) {
+        .job_list_page .jobs {
+            width: 25%;
+        }
+    }
+}
+
+
+@mixin notAsModernBrowsers() {
+    /* all IE versions <= 11 */
+    @media screen and (-ms-high-contrast: none) {
+        @content;
+    }
+
+    /* all edge versions */
+    @supports (-ms-ime-align:auto) {
+        @content;
+    }
+}
+
+@include notAsModernBrowsers {
+    body {
+        background-image:
+            linear-gradient(to bottom, #1e4470 0%,#185281 100%);
+        font-family: Montserrat;
+    }
+    .viewport {
+        background-image:
+            radial-gradient(rgba(255, 255, 255, 1), rgba(245, 216, 216,.2) 2px, transparent 40px),
+            radial-gradient(rgba(255, 255, 255, 1), rgba(214, 235, 255,.15) 1px, transparent 30px),
+            radial-gradient(rgba(255, 255, 255, 1), rgba(207, 255, 219,.1) 2px, transparent 40px),
+            radial-gradient(rgba(255, 255, 255, 1), rgba(255,255,255,.1) 2px, transparent 30px);
+        background-size: 
+            550px 550px,      
+            350px 350px, 
+            250px 250px, 
+            150px 150px;
+        background-position: 
+            0 0, 
+            40px 60px, 
+            130px 270px, 
+            70px 100px;
+        background-repeat: repeat;
+    }
+    .main-header {
+        display: flex;
+        top: 0;
+        position: fixed;
+        width: 100vw;
+        height: 55px;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(27, 27, 27, 0.8);
+        border-bottom: #dacdcd solid 2px;
+    }
+    #menu-main-menu li, .logo {
+        color: #efefef;
+        transition: color .5s, transform .7s;
+    }
+    #menu-main-menu li:hover, .logo:hover {
+        color: #b7dbfc;        
+        transform: scale(1.1, 1.1);
+    }
+    #menu-main-menu li::before,
+    #menu-main-menu li::after {
+        background-color: #b7dbfc;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    #menu-main-menu li:hover::before,
+    #menu-main-menu li:hover::after {
+        opacity: 1;
+    }
+
+    .scene_3d_wrapper {
+        padding-right: 5vw;
+        padding-left: 5vw;
+    }
+    .scene_3d_wrapper {
+        margin-top: 100px;
+    }
+    article {
+        font-size: 18px;
+    }
+    #scrolling_icon {
+        display: none;
+    }
+}

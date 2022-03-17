@@ -1,0 +1,1 @@
+"use strict";function invertColors(){document.getElementsByTagName("body")[0].classList.toggle("dark-mode")}function bigFonts(){document.getElementsByTagName("body")[0].classList.toggle("big-mode")}

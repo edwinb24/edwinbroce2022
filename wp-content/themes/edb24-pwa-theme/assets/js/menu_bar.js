@@ -1,0 +1,1 @@
+"use strict";function toogleHamburgerIcon(){document.getElementsByClassName("hamburger-icon")[0].classList.toggle("change")}

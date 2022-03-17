@@ -1,0 +1,108 @@
+//Montserrat Font Face
+@font-face {
+    font-family: 'Montserrat'; 
+    src: url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-Regular_A8I1YFB5R.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-Regular_2uh8E1HWz.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-Italic_zLIFWD55s.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-Italic_YgWpkjXS8O.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-SemiBold_WslNdVmtv.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-SemiBold_D4qDYSDk9.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-SemiBoldItalic_7M1DhjVGv.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-SemiBoldItalic_mxuQg8Lpq.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-Bold_wbDHiymyS.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-Bold_3gJ5vc2CC.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-BoldItalic_23i5NEDmS.woff2') format('woff2'),
+    url('https://ik.imagekit.io/edwinb24/fonts/Montserrat-BoldItalic_J1IzWsbYc.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+//Painthing With Chocolate Font Face
+@font-face {
+    font-family: 'Painthing With Chocolate';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/painting_with_chocolate-webfont_BJ8ltV9ni.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/painting_with_chocolate-webfont_Q8XDfA_kG.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Orbitron Font Face
+@font-face {
+    font-family: 'Orbitron';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/orbitron-bold-webfont_y1ctpTN0E.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/orbitron-bold-webfont_C0mDrdfe1.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/orbitron-black-webfont_xyREzX9PyL.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/orbitron-black-webfont_DnLHCcr6k.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+//Caviar Dream Font Face
+@media screen and (max-width: 1250px) and (min-width: 700px){
+    @font-face {
+        font-family: 'Caviar'; 
+        src: url('https://ik.imagekit.io/edwinb24/fonts/caviardreams-webfont_jM7eYBLUB.woff2') format('woff2'),
+            url('https://ik.imagekit.io/edwinb24/fonts/caviardreams-webfont_oJYtZUIaDb.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Caviar';
+        src: url('https://ik.imagekit.io/edwinb24/fonts/caviardreams_italic-webfont_F_DjH2oFG-.woff2') format('woff2'),
+            url('https://ik.imagekit.io/edwinb24/fonts/caviardreams_italic-webfont_gnQ6QGLS6r.woff') format('woff');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'Caviar';
+        src: url('https://ik.imagekit.io/edwinb24/fonts/caviar_dreams_bold-webfont_P9V1YCa7oH.woff2') format('woff2'),
+            url('https://ik.imagekit.io/edwinb24/fonts/caviar_dreams_bold-webfont_z-UPeAVKJ.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Caviar';
+        src: url('https://ik.imagekit.io/edwinb24/fonts/caviardreams_bolditalic-webfont_VE5mg25rf.woff2') format('woff2'),
+            url('https://ik.imagekit.io/edwinb24/fonts/caviardreams_bolditalic-webfont_I8mPAuNAd.woff') format('woff');
+        font-weight: 600;
+        font-style: italic;
+    }
+}

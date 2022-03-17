@@ -1,0 +1,1 @@
+"use strict";var renderOnLoad=function(){var e=document.getElementById("render-onload"),n=document.createElement("div");n.innerHTML=e.textContent,document.body.appendChild(n),e.parentElement.removeChild(e)};window.requestAnimationFrame?window.requestAnimationFrame((function(){window.setTimeout(renderOnLoad,0)})):window.addEventListener("load",renderOnLoad);
