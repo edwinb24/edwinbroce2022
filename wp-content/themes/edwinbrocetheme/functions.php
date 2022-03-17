@@ -6,13 +6,13 @@ Adding Menu Support
 */
 
 
-function acme_theme_setup() {
+function edwinbroce_theme_setup() {
 	add_theme_support('menus');
 	add_theme_support('post-thumbnails');
 	register_nav_menu('header_menu', 'Main Menu');
 }
 
-add_action('init', 'acme_theme_setup');
+add_action('init', 'edwinbroce_theme_setup');
 
 /*
  ======================================
