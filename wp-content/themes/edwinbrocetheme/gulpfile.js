@@ -1,10 +1,10 @@
-let gulp = require("gulp");
-let sass = require("gulp-sass");
-let babel = require("gulp-babel");
-let uglify = require("gulp-uglify-es").default;
-let autoprefixer = require("gulp-autoprefixer");
-let cleanCSS = require("gulp-clean-css");
-let browserSync = require("browser-sync").create();
+const gulp = require("gulp");
+const babel = require("gulp-babel");
+const uglify = require("gulp-uglify-es").default;
+const autoprefixer = require("gulp-autoprefixer");
+const cleanCSS = require("gulp-clean-css");
+const browserSync = require("browser-sync").create();
+const sass = require("gulp-sass")(require("sass"));
 
 //Compile SCSS into CSS
 function style() {
