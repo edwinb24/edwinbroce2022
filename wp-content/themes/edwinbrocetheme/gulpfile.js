@@ -56,4 +56,5 @@ function watch() {
 }
 
 exports.style = style;
+exports.script = script;
 exports.watch = watch;

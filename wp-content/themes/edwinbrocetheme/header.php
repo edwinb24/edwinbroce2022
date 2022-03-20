@@ -48,51 +48,24 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
         <style>
             <?php 
             include(dirname(__FILE__).'/assets/css/reset.css');
-            if(is_front_page()) {
-                include(dirname(__FILE__).'/assets/css/home.css');
-            } else {
-                include(dirname(__FILE__).'/assets/css/content.css');
-            }
-            if(get_post_type() == 'jobs')
-                include(dirname(__FILE__).'/assets/css/3d_styles.css');
-            if(get_post_type() == 'projects' || get_post_type() == 'presentations') {
-                include(dirname(__FILE__).'/assets/css/projects.css');
-                if(!is_post_type_archive())
-                    include(dirname(__FILE__).'/assets/css/project_single.css');
-            }
-            if(get_post_type() == 'projects' || get_post_type() == 'presentations') {
-                include(dirname(__FILE__).'/assets/css/presentation_single.css');
-            }
+            include(dirname(__FILE__).'/assets/css/home.css');
+            include(dirname(__FILE__).'/assets/css/3d_styles.css');
             ?>
         </style>
 
 <!-- Lazy Styles -->
 <noscript id="render-onload">
-    <?php if(is_front_page()) { ?>
-            <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_home.css">     
-        <?php   } else { ?>
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
-            <?php if(get_post_type() == 'projects' && is_post_type_archive()) : ?>
-                <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_projects.css">
-            <?php elseif(get_post_type() == 'presentations' && is_post_type_archive()) : ?>
-                <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_projects.css">
-            <?php endif ?>
-
-    <?php } ?>
-</noscript>
+ </noscript>
         
 <!-- Critical JS -->
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
             include(dirname(__FILE__).'/assets/js/houdini_index.js');
-            if(is_front_page()) {
-                include(dirname(__FILE__).'/assets/js/houdini_index_home.js');
-            } elseif(get_post_type() == 'jobs') {
                 include(dirname(__FILE__).'/assets/js/3d_scrolling.js');    
-            }
             ?>       
         </script>
     </head>
