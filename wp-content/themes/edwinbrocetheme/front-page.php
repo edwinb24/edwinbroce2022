@@ -9,36 +9,25 @@
 <div class="scene_3d_wrapper">
 <div class="scene_3d_container">
 <div class="main_content_wrapper job_list_page">
-			<article class="job_1 post-19 jobs type-jobs status-publish hentry">
-			<h1>TESTING</h1>
-			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-				  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-				  . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-				   anim id est laborum."
-				</p>
+
+<?php 
+$args = array( 'post_type' => 'jobs', 'posts_per_page' => 10 );
+$the_query = new WP_Query( $args ); 
+?>
+	<?php 
+	$i = 1;
+	$item = "job_";
+	if( $the_query->have_posts() ):
+		while( $the_query->have_posts() ): $the_query->the_post(); 
+			$job_class = $item . $i; 
+			$i++; ?>
+			<article id="page-<?php print(strtolower(str_replace(' ', '-', get_the_title()))); ?>" <?php post_class($job_class); ?>>
+				<?php the_title('<h1 class="entry-title">','</h1>' ); ?>
+				<?php the_content(); ?>
 			</article>
-			<article class="job_2 post-19 jobs type-jobs status-publish hentry">
-			<h1>TESTING</h1>
-			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-				  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-				  . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-				   anim id est laborum."
-				</p>
-			</article>
-			<article class="job_3 post-19 jobs type-jobs status-publish hentry">
-			<h1>TESTING</h1>
-			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-				  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
-				  . Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-				   anim id est laborum."
-				</p>
-			</article>
+		<?php endwhile;	
+	endif;		
+	?>
 </div>
 </div>
 </div>

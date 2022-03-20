@@ -48,24 +48,25 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
         <style>
             <?php 
             include(dirname(__FILE__).'/assets/css/reset.css');
-            include(dirname(__FILE__).'/assets/css/home.css');
-            include(dirname(__FILE__).'/assets/css/3d_styles.css');
+                include(dirname(__FILE__).'/assets/css/content.css');
+                include(dirname(__FILE__).'/assets/css/3d_styles.css');
             ?>
         </style>
 
 <!-- Lazy Styles -->
 <noscript id="render-onload">
-            <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
+            <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_home.css">     
+             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
- </noscript>
+</noscript>
         
 <!-- Critical JS -->
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
             include(dirname(__FILE__).'/assets/js/houdini_index.js');
-                include(dirname(__FILE__).'/assets/js/3d_scrolling.js');    
+            include(dirname(__FILE__).'/assets/js/3d_scrolling.js');    
             ?>       
         </script>
     </head>
