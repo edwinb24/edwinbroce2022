@@ -35,33 +35,6 @@
     }
 
     //Scrolling Message
-    #scrolling_icon {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: #efefef;
-        position: fixed;
-        font-weight: 600;
-        display: none;
-        flex-flow: column;
-        justify-content: center;
-        text-align: center;
-        margin: auto;
-        align-items: center;
-        z-index: 1000000;
-        font-family: "Orbitron";
-        top: 0px;
-        opacity: 1;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        transition: top 2s, opacity 0.7s;
-    }
-    .scrolling_message_text {
-        font-size: calc(42px + (80 - 42) * ((100vw - 600px) / (1600 - 600)));
-    }
-    .scrolling_icon_arrow {
-        font-size: calc(142px + (170 - 142) * ((100vw - 600px) / (1600 - 600)));
-    }
     .scene_3d_wrapper {
         height: calc(var(--viewportHeight) * 1px);
     }

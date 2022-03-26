@@ -51,11 +51,10 @@ nav.social_media a:hover {
 }
 
 .header_menu {
-    background: rgba(25, 25, 25, 0.92);
-    box-shadow: 0px 5px 5px #000;
+    background: rgba(0, 0, 0, 0.62);
+    box-shadow: 0 3px 3px #666;
 }
 nav.social_media {
-    flex-flow: column;
     position: relative;
     right: -10px;
     opacity: 0;
@@ -68,12 +67,6 @@ nav.social_media {
 nav.social_media a {
     filter: contrast(0) sepia(42%) saturate(700%) brightness(141%)
         grayscale(33%) drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.3));
-}
-.menu-on {
-    border-radius: 0px 0px 15px 15px;
-    box-shadow: 0px 0px 0px transparent;
-    transition-property: top box-shadow;
-    transition-duration: 0.5s;
 }
 #menu-main-menu li {
     transition-property: opacity, top;
@@ -100,6 +93,11 @@ nav.social_media a {
 #menu-main-menu li:after {
     display: none;
 }
+
+.menu-on {
+    z-index: 11;
+}
+
 #toggle-main-menu:checked ~ .header_menu {
     top: 0;
 }
@@ -110,11 +108,4 @@ nav.social_media a {
 #toggle-main-menu:checked ~ .header_menu nav.social_media {
     opacity: 1;
     right: 0px;
-}
-#toggle-main-menu:checked ~ .menu-on {
-    background: #e6a935;
-    box-shadow: 0px 5px 5px #000;
-}
-#menu-main-menu {
-    flex-flow: column;
 }

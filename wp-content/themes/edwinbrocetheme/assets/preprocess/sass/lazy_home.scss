@@ -337,20 +337,6 @@ a:focus {
         order: 1;
     }
 
-    .name_and_intro {
-        order: 2;
-        display: flex;
-        flex-flow: column;
-        text-align: center;
-        font-size: 28px;
-    }
-
-    .description {
-        order: 3;
-        max-width: 720px;
-        text-align: center;
-    }
-
     .main_navigation {
         order: 4;
         display: flex;

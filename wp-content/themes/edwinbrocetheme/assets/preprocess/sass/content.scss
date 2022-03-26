@@ -80,20 +80,7 @@ nav.social_media img {
     padding-bottom: 10px;
     padding-left: 10vw;
     padding-right: 10vw;
-    grid-template-areas:
-        "main_menu social_media_menu"
-        "main_menu social_media_menu";
-}
-
-.menu-on {
-    position: relative;
-    top: 0px;
-    align-self: center;
-    padding-right: 10px;
-    padding-left: 20px;
-    padding-top: 9px;
-    padding-bottom: 7px;
-    margin-bottom: 6px;
+    grid-template-areas: "main_menu social_media_menu";
 }
 
 #menu-main-menu li {
@@ -103,8 +90,4 @@ nav.social_media img {
     position: relative;
     margin-bottom: 15px;
     top: -10px;
-}
-
-#toggle-main-menu:checked ~ .menu-on {
-    top: calc(var(--top-menu-height) - 35px);
 }
