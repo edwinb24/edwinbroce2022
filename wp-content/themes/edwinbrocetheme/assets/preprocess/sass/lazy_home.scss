@@ -138,21 +138,6 @@ a:focus {
             height: 100%;
             box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
         }
-        /*🧙‍♂️ CSS Houdini!🧙*/
-        @supports (background-image: paint(custom_corner)) {
-            .main_navigation div:hover {
-                background-color: transparent;
-                background-image: paint(custom_corner);
-                --radius: #{$cut_corner}px;
-                --onhover_color1: var(--hover-color1);
-                --onhover_color2: var(--hover-color2);
-            }
-            .main_navigation div:hover:before {
-                width: calc(100% - #{pitagoras($cut_corner)}px);
-                height: calc(100% - #{pitagoras($cut_corner)}px);
-                z-index: -1;
-            }
-        }
 
         nav.social_media a {
             filter: contrast(0) sepia(100%) saturate(10000%) brightness(100%)

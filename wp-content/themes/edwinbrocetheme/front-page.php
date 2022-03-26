@@ -1,33 +1,21 @@
 <?php get_header(); ?>
 <title>Edwin Broce's Website</title>
 <div class="viewport">
-<span class="separating_line"></span>
-<div id="scrolling_icon">
-	<div class="scrolling_message_text"><span>Scroll</span> <span>to</span> <span>navigate</span></div>
-	<div class="scrolling_icon_arrow">↓</div>
-</div>
 <div class="scene_3d_wrapper">
 <div class="scene_3d_container">
 <div class="main_content_wrapper job_list_page">
-
-<?php 
-$args = array( 'post_type' => 'jobs', 'posts_per_page' => 10 );
-$the_query = new WP_Query( $args ); 
-?>
-	<?php 
-	$i = 1;
-	$item = "job_";
-	if( $the_query->have_posts() ):
-		while( $the_query->have_posts() ): $the_query->the_post(); 
-			$job_class = $item . $i; 
-			$i++; ?>
-			<article id="page-<?php print(strtolower(str_replace(' ', '-', get_the_title()))); ?>" <?php post_class($job_class); ?>>
-				<?php the_title('<h1 class="entry-title">','</h1>' ); ?>
-				<?php the_content(); ?>
-			</article>
-		<?php endwhile;	
-	endif;		
-	?>
+	<div class="page_title">
+		<h1 class="title_part_1">Full-Stack</h1>
+		<h1 class="title_part_2">Web</h1>
+		<h1 class="title_part_3">Developer</h1>
+	</div>
+	<article id="page-front-end-wordpress-developer-at-colibri-group-–-08/2017-to-07/2019" class="job_2 post-17 jobs type-jobs status-publish hentry">
+		<h1 class="entry-title">Front-End WordPress Developer at Colibri Group – 08/2017 to 07/2019</h1>				
+		<ul><li>Personally responsible for overhauling the company’s main product webpage, a change that is estimated to increase revenue by $1.5
+			 million yearly </li><li>Built a website to convert the company’s biggest platform from a transaction model to a subscription model,
+				  which allows the company to convert 32% of users to subscribers and increases average order value (AOV) from $12 to $34 </li>
+				  <li>Worked entirely remotely as part of a diverse, international team</li></ul>
+	</article>
 </div>
 </div>
 </div>
