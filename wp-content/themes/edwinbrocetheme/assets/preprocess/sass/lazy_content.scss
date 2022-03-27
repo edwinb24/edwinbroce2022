@@ -73,7 +73,6 @@ nav.social_media a {
     transition-duration: 0.5s;
     transition-delay: 0.7s;
     transition-timing-function: ease-in;
-    color: #ffd27d;
     filter: unset;
 }
 
@@ -86,7 +85,7 @@ nav.social_media a {
 #menu-main-menu li:before {
     content: "";
     width: calc(100% + 5px) !important;
-    background-image: linear-gradient(orange, darken(orange, 5%));
+    background-color: #d1d1d1;
     left: -5px !important;
     opacity: 1 !important;
 }
