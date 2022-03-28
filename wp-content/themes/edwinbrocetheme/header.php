@@ -55,7 +55,6 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
 
 <!-- Lazy Styles -->
 <noscript id="render-onload">
-            <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_home.css">     
              <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
@@ -86,12 +85,19 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
             </label>
             <label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
             <div class="header_menu">
-            <nav aria-label="Main Navigation" class="menu_main_menu_wrapper">
-                <div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-7" class="menu-item menu-item-type-post_type_archive menu-item-object-jobs current-menu-item menu-item-7"><a href="#" aria-current="page">About</a></li>
-                    <li id="menu-item-61" class="menu-item menu-item-type-post_type_archive menu-item-object-projects menu-item-61"><a href="#">Projects</a></li>
-                    <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="#">Contact</a></li>
-                </ul></div>
-            </nav>
+                <nav class="menu_main_menu_wrapper" aria-label="Main Navigation">
+                    <ul id="menu-main-menu" class="menu">
+                        <li id="menu-item-7" class="menu-item menu-item-type-post_type_archive menu-item-object-jobs current-menu-item menu-item-7"><a href="#" aria-current="page">About</a></li>
+                        <li id="menu-item-61" class="menu-item menu-item-type-post_type_archive menu-item-object-projects menu-item-61"><a href="#">Projects</a></li>
+                        <li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="e_mail_section" aria-label="Sned me an E-mail">
+                    <h2>
+                        Start a conversation
+                    </h2>
+                    <a href="mailto:broceedwin@gmail.com">broceedwin@gmail.com</a>
+                </nav>
                 <nav class="social_media" aria-label="Social Media Navigation">
                     <a href="https://github.com/edwinb24" target="_blank" rel="nofollow noreferrer"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="Go to My GitHub"></a>
                     <a href="https://www.linkedin.com/in/edwin-broce/" target="_blank" rel="nofollow noreferrer"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="Go to My LinkedIn"></a>

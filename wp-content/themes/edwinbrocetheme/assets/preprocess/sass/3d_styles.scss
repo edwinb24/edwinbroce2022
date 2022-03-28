@@ -279,25 +279,6 @@
         background: rgba(27, 27, 27, 0.8);
         border-bottom: #dacdcd solid 2px;
     }
-    #menu-main-menu li {
-        color: #efefef;
-        transition: color 0.5s, transform 0.7s;
-    }
-    #menu-main-menu li:hover {
-        color: #b7dbfc;
-        transform: scale(1.1, 1.1);
-    }
-    #menu-main-menu li::before,
-    #menu-main-menu li::after {
-        background-color: #efefef;
-        opacity: 0;
-        transition: opacity 1s;
-    }
-
-    #menu-main-menu li:hover::before,
-    #menu-main-menu li:hover::after {
-        opacity: 1;
-    }
 
     .scene_3d_wrapper {
         padding-right: 5vw;

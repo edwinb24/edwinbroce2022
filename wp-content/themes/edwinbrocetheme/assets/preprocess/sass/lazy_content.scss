@@ -7,6 +7,34 @@ a:focus {
     outline: none;
 }
 
+.header_menu {
+    padding: 20vw;
+    grid-template-areas:
+        "e_mail_menu main_menu"
+        "social_media_menu main_menu";
+}
+
+.menu_main_menu_wrapper {
+    grid-area: main_menu;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.e_mail_section {
+    grid-area: e_mail_menu;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social_media {
+    grid-area: social_media_menu;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #menu-main-menu li:before,
 #menu-main-menu li:after {
     content: "";
@@ -62,7 +90,6 @@ nav.social_media {
     transition-duration: 0.5s;
     transition-delay: 0.7s;
     transition-timing-function: ease-in;
-    justify-self: end;
 }
 nav.social_media a {
     filter: contrast(0) sepia(42%) saturate(700%) brightness(141%)
@@ -107,4 +134,24 @@ nav.social_media a {
 #toggle-main-menu:checked ~ .header_menu nav.social_media {
     opacity: 1;
     right: 0px;
+}
+
+#menu-main-menu li {
+    color: #efefef;
+    transition: color 0.5s, transform 0.7s;
+}
+#menu-main-menu li:hover {
+    color: #b7dbfc;
+    transform: scale(1.1, 1.1);
+}
+#menu-main-menu li::before,
+#menu-main-menu li::after {
+    background-color: #efefef;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#menu-main-menu li:hover::before,
+#menu-main-menu li:hover::after {
+    opacity: 1;
 }

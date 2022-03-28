@@ -21,14 +21,10 @@
 
 #menu-main-menu {
     display: flex;
+    flex-flow: column;
     justify-content: space-evenly;
-    padding-right: 10vw;
-    padding-left: 10vw;
 }
 #menu-main-menu li {
-    margin-right: 20px;
-    margin-left: 20px;
-    position: relative;
     color: #d1d1d1;
     filter: grayscale(100%);
     transition: filter 1.2s;
@@ -56,17 +52,13 @@ nav.social_media img {
 }
 
 .header_menu {
-    top: calc(var(--top-menu-height) * -1);
+    top: -100vh;
     display: grid;
     transition: top 0.5s;
     width: 100vw;
+    height: 100vh;
     position: fixed;
     left: 0;
-    padding-top: 12px;
-    padding-bottom: 8px;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    grid-template-columns: 1fr 100px;
 }
 
 #menu-main-menu li {
