@@ -8,8 +8,8 @@ a:focus {
 }
 
 .header_menu {
-    padding-right: 8vw;
-    padding-left: 8vw;
+    padding-right: 12vw;
+    padding-left: 12vw;
     padding-top: 20vh;
     padding-bottom: 20vh;
     grid-template-areas:
@@ -39,42 +39,12 @@ a:focus {
 .social_media {
     grid-area: social_media_menu;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: start;
 }
 
-#menu-main-menu li:before,
-#menu-main-menu li:after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    width: 0px;
-    height: 2px;
-    margin: 5px 0 0;
-    transition-property: width, opacity, left, right, filter;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-    opacity: 0;
-    background-color: darken(#ffd27d, 5%);
-}
-#menu-main-menu li:before {
-    left: calc(50% + 5px);
-}
-#menu-main-menu li:after {
-    right: calc(50% + 5px);
-}
 #menu-main-menu li:hover {
     filter: grayscale(0%);
-}
-#menu-main-menu li:hover:before {
-    left: -5px;
-    opacity: 1;
-    width: calc(50% + 5px);
-}
-#menu-main-menu li:hover:after {
-    right: -5px;
-    opacity: 1;
-    width: calc(50% + 5px);
 }
 
 nav.social_media a {
@@ -162,4 +132,18 @@ nav.social_media a {
 #menu-main-menu li:hover::before,
 #menu-main-menu li:hover::after {
     opacity: 1;
+}
+
+@media screen and (max-width: 1050px) {
+    .header_menu {
+        grid-template-areas:
+            "main_menu"
+            "e_mail_menu"
+            "social_media_menu";
+        padding-top: 100px;
+        padding-bottom: 0;
+    }
+    .menu_main_menu_wrapper {
+        justify-content: flex-start;
+    }
 }

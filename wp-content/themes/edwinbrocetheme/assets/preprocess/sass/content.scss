@@ -37,9 +37,21 @@ nav.social_media a {
 
 nav.social_media img {
     width: auto;
-    height: 28px;
     margin-right: 3px;
     margin-left: 3px;
+}
+
+nav.social_media .github_image {
+    height: 60px;
+}
+
+nav.social_media .linkedin_image {
+    height: 65px;
+}
+
+nav.social_media .youtube_image {
+    height: 80px;
+    margin-top: -7px;
 }
 
 #toggle-main-menu {
