@@ -9,10 +9,10 @@
 .bar1,
 .bar2,
 .bar3 {
-    width: 25px;
+    width: 35px;
     height: 3px;
     background-color: #efefef;
-    margin: 4px 0;
+    margin: 7px 0;
     transition: 0.4s;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .change .bar1 {
-    transform: rotate(-45deg) translate(-9px, 2px);
+    transform: rotate(-45deg) translate(-12px, 2px);
 }
 
 .change .bar2 {
@@ -29,5 +29,5 @@
 }
 
 .change .bar3 {
-    transform: rotate(45deg) translate(-8px, -2px);
+    transform: rotate(45deg) translate(-12px, -2px);
 }

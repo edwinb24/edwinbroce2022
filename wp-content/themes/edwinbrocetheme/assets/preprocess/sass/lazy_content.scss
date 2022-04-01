@@ -10,8 +10,9 @@ a:focus {
 .header_menu {
     padding-right: 12vw;
     padding-left: 12vw;
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+    grid-auto-rows: 140px 1fr;
     grid-template-areas:
         "e_mail_menu main_menu"
         "social_media_menu main_menu";
@@ -20,16 +21,23 @@ a:focus {
 .menu_main_menu_wrapper {
     grid-area: main_menu;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
+}
+
+.main_menu_logo {
+    position: absolute;
+    top: 25px;
+    left: 12vw;
 }
 
 .e_mail_section {
     grid-area: e_mail_menu;
     display: flex;
-    justify-content: center;
     flex-flow: column;
+    align-items: baseline;
     text-align: start;
+    padding-top: 15px;
 }
 
 .e_mail_section a {
@@ -40,7 +48,6 @@ a:focus {
     grid-area: social_media_menu;
     display: flex;
     align-items: flex-start;
-    justify-content: start;
 }
 
 #menu-main-menu li:hover {
@@ -79,6 +86,7 @@ nav.social_media a {
     transition-delay: 0.7s;
     transition-timing-function: ease-in;
     filter: unset;
+    text-align: left;
 }
 
 @for $i from 1 through 5 {
@@ -134,7 +142,7 @@ nav.social_media a {
     opacity: 1;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 750px) {
     .header_menu {
         grid-template-areas:
             "main_menu"

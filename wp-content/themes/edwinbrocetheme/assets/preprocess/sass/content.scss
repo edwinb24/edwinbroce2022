@@ -4,7 +4,7 @@
 .main-header {
     display: grid;
     grid-template-areas: "header_menu";
-    padding-top: 15px;
+    padding-top: 25px;
     padding-bottom: 15px;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -59,7 +59,7 @@ nav.social_media .youtube_image {
 }
 
 .header_menu {
-    top: -100vh;
+    top: -102vh;
     display: grid;
     transition: top 0.5s;
     width: 100vw;
@@ -69,10 +69,5 @@ nav.social_media .youtube_image {
 }
 
 #menu-main-menu li {
-    text-align: center;
     font-size: 5vw;
-    opacity: 0;
-    position: relative;
-    margin-bottom: 15px;
-    top: -10px;
 }

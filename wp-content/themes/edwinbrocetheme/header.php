@@ -85,6 +85,7 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
             </label>
             <label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
             <div class="header_menu">
+                <h1 class="main_menu_logo">Edwin Broce</h1>
                 <nav class="menu_main_menu_wrapper" aria-label="Main Navigation">
                     <ul id="menu-main-menu" class="menu">
                         <li id="menu-item-7" class="menu-item menu-item-type-post_type_archive menu-item-object-jobs current-menu-item menu-item-7"><a href="#" aria-current="page">About</a></li>
