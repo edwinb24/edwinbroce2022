@@ -9,7 +9,7 @@
 
 @media only screen and (min-width: 600px) {
     :root {
-        --cameraZ: 1700; // Initial camera position
+        --cameraZ: 1900; // Initial camera position
         --scenePerspectiveOriginY: 40;
     }
 }
@@ -104,9 +104,9 @@
     @for $i from 1 through 10 {
         .jobs:nth-child(#{$i}) {
             transform: translate3D(
-                random(50) - 25 * 1%,
-                random(100) - 50 * 1%,
-                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+                4%,
+                -2%,
+                calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px)
             );
         }
     }
@@ -119,12 +119,31 @@
         right: 10vw;
     }
 
-    // .job_list_page .jobs:nth-child(1) {
-    //     background: rgb(179, 179, 179);
-    // }
+    /*****************BACKGROUND CODE*************************/
+
+    .scene_3d_element {
+        transform-style: preserve-3d;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-size: cover;
+    }
+
+    @for $i from 1 through 4 {
+        .forest_background:nth-child(#{$i}) {
+            transform: translate3D(
+                random(50) - 25 * 1%,
+                random(100) - 50 * 1%,
+                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+            );
+            background-image: url("wp-content/themes/edwinbrocetheme/assets/images/forest_background_#{$i}.png");
+        }
+    }
 
     /******************EXPERIMENTING BEGIN************************/
-    .job_list_page .jobs:nth-child(1) {
+    .job_list_page .jobs {
         background-image: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
         background-repeat: no-repeat;
         background-position: right top;
@@ -138,7 +157,7 @@
         animation-fill-mode: forwards;
     }
 
-    .job_list_page .jobs:nth-child(1):before {
+    .job_list_page .jobs:before {
         content: "";
         background: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
         background-repeat: no-repeat;
@@ -161,58 +180,6 @@
     }
 
     /******************EXPERIMENTING ENDS************************/
-
-    .job_list_page .jobs:nth-child(2),
-    .job_list_page .jobs:nth-child(2):before,
-    .job_list_page .jobs:nth-child(2):after {
-        background: linear-gradient(45deg, #6db51a, #00bcd4);
-    }
-    .job_list_page .jobs:nth-child(3),
-    .job_list_page .jobs:nth-child(3):before,
-    .job_list_page .jobs:nth-child(3):after {
-        background: linear-gradient(45deg, #e91e63, #5d02ff);
-    }
-    .job_list_page .jobs:nth-child(4),
-    .job_list_page .jobs:nth-child(4):before,
-    .job_list_page .jobs:nth-child(4):after {
-        background: linear-gradient(45deg, #ff0000, #ffc107);
-    }
-
-    .job_list_page .jobs:nth-child(5),
-    .job_list_page .jobs:nth-child(5):before,
-    .job_list_page .jobs:nth-child(5):after {
-        background: linear-gradient(45deg, #380036, #0cbaba);
-    }
-
-    .job_list_page .jobs:nth-child(6),
-    .job_list_page .jobs:nth-child(6):before,
-    .job_list_page .jobs:nth-child(6):after {
-        background: linear-gradient(45deg, #b91372, #6b0f1a);
-    }
-
-    .job_list_page .jobs:nth-child(7),
-    .job_list_page .jobs:nth-child(7):before,
-    .job_list_page .jobs:nth-child(7):after {
-        background: linear-gradient(45deg, #00c6fb, #005bea);
-    }
-
-    .job_list_page .jobs:nth-child(8),
-    .job_list_page .jobs:nth-child(8):before,
-    .job_list_page .jobs:nth-child(8):after {
-        background: linear-gradient(45deg, #0250c5, #d43f8d);
-    }
-
-    .job_list_page .jobs:nth-child(9),
-    .job_list_page .jobs:nth-child(9):before,
-    .job_list_page .jobs:nth-child(9):after {
-        background: linear-gradient(45deg, #617798, #5d5b5b);
-    }
-
-    .job_list_page .jobs:nth-child(10),
-    .job_list_page .jobs:nth-child(10):before,
-    .job_list_page .jobs:nth-child(10):after {
-        background: linear-gradient(45deg, #16a085, #f4d03f);
-    }
 
     @media only screen and (min-width: 600px) {
         .job_list_page .jobs {
