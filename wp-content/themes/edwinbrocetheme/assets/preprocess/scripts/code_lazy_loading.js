@@ -1,5 +1,4 @@
 let renderOnLoad = function () {
-    console.log("WORKING");
     let e = document.getElementById("render-onload");
     let n = document.createElement("div");
     n.innerHTML = e.textContent;

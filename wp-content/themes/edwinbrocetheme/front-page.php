@@ -7,7 +7,7 @@
 	<!-- <div class="jobs">
 		<h1 class="entry-title">Front-End WordPress Developer at Colibri Group – 08/2017 to 07/2019</h1>				
 	</div> -->
-	<article id="page-front-end-wordpress-developer-at-colibri-group-–-08/2017-to-07/2019" class="job_2 post-17 jobs type-jobs status-publish hentry">
+	<article class="job_2 post-17 jobs type-jobs status-publish hentry">
 		<h1 class="entry-title">Front-End WordPress Developer at Colibri Group – 08/2017 to 07/2019</h1>				
 		<ul><li>Personally responsible for overhauling the company’s main product webpage, a change that is estimated to increase revenue by $1.5
 			 million yearly </li><li>Built a website to convert the company’s biggest platform from a transaction model to a subscription model,

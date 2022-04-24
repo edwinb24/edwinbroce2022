@@ -9,10 +9,7 @@ const sass = require("gulp-sass")(require("sass"));
 //Compile SCSS into CSS
 function style() {
     return gulp
-        .src([
-            "!./assets/preprocess/sass/**/home.scss",
-            "./assets/preprocess/sass/**/*.scss",
-        ])
+        .src(["./assets/preprocess/sass/**/*.scss"])
         .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
         .pipe(autoprefixer({ grid: "autoplace" }))
         .pipe(cleanCSS())

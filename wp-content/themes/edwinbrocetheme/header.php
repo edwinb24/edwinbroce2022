@@ -55,16 +55,17 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
 
 <!-- Lazy Styles -->
 <noscript id="render-onload">
-             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
-            <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
+             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_hamburgerIconStyles.css">
+             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_header.css">
+             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
 </noscript>
         
 <!-- Critical JS -->
         <script>
             <?php 
-            include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
-            include(dirname(__FILE__).'/assets/js/3d_scrolling.js');    
+            include(dirname(__FILE__).'/assets/js/hamburgerIconAnimation.js');
+            include(dirname(__FILE__).'/assets/js/scrolling3D.js');    
             ?>       
         </script>
     </head>
