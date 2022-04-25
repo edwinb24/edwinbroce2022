@@ -79,7 +79,6 @@
         top: 30%;
         padding: 25px;
         transition: color 1s;
-        height: 460px; //testing code....
     }
     .job_list_page .jobs ul {
         font-size: 17px;
@@ -129,17 +128,6 @@
         top: 0;
         left: 0;
         background-size: cover;
-    }
-
-    @for $i from 1 through 4 {
-        .forest_background:nth-child(#{$i}) {
-            transform: translate3D(
-                random(50) - 25 * 1%,
-                random(100) - 50 * 1%,
-                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
-            );
-            background-image: url("wp-content/themes/edwinbrocetheme/assets/images/forest_background_#{$i}.png");
-        }
     }
 
     /******************EXPERIMENTING BEGIN************************/

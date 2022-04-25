@@ -48,7 +48,7 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
         <style>
             <?php 
             include(dirname(__FILE__).'/assets/css/reset.css');
-                include(dirname(__FILE__).'/assets/css/content.css');
+                include(dirname(__FILE__).'/assets/css/header.css');
                 include(dirname(__FILE__).'/assets/css/3d_styles.css');
             ?>
         </style>
