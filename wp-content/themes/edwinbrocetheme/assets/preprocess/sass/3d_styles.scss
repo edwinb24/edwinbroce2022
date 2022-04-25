@@ -60,7 +60,7 @@
             url(https://grainy-gradients.vercel.app/noise.svg);
     }
 
-    .job_list_page {
+    .floating_elements_list {
         position: absolute;
         top: 0;
         height: 100vh;
@@ -69,23 +69,23 @@
         transform: translateZ(calc(var(--cameraZ) * 1px));
         will-change: transform;
     }
-    .job_list_page .jobs {
+    .floating_elements_list .floating_element {
         font-family: Montserrat;
         transform-style: preserve-3d;
         position: absolute;
         font-weight: 600;
-        color: #efefef;
+        color: var(--font-color);
         width: 70%;
         top: 30%;
         padding: 25px;
         transition: color 1s;
     }
-    .job_list_page .jobs ul {
+    .floating_elements_list .floating_element ul {
         font-size: 17px;
         list-style-type: "- ";
         padding-left: 12px;
     }
-    .job_list_page .jobs:before {
+    .floating_elements_list .floating_element:before {
         content: "";
         position: absolute;
         top: 0px;
@@ -95,13 +95,13 @@
         z-index: -1;
     }
 
-    .job_list_page .jobs,
-    .job_list_page .jobs:before,
-    .job_list_page .jobs:after {
+    .floating_elements_list .floating_element,
+    .floating_elements_list .floating_element:before,
+    .floating_elements_list .floating_element:after {
         border-radius: 10px;
     }
     @for $i from 1 through 10 {
-        .jobs:nth-child(#{$i}) {
+        .floating_element:nth-child(#{$i}) {
             transform: translate3D(
                 4%,
                 -2%,
@@ -110,11 +110,11 @@
         }
     }
 
-    .jobs:nth-child(2n) {
+    .floating_element:nth-child(2n) {
         left: 10vw;
     }
 
-    .jobs:nth-child(2n + 1) {
+    .floating_element:nth-child(2n + 1) {
         right: 10vw;
     }
 
@@ -131,7 +131,7 @@
     }
 
     /******************EXPERIMENTING BEGIN************************/
-    .job_list_page .jobs {
+    .floating_elements_list .floating_element {
         background-image: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
         background-repeat: no-repeat;
         background-position: right top;
@@ -145,7 +145,7 @@
         animation-fill-mode: forwards;
     }
 
-    .job_list_page .jobs:before {
+    .floating_elements_list .floating_element:before {
         content: "";
         background: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
         background-repeat: no-repeat;
@@ -170,12 +170,12 @@
     /******************EXPERIMENTING ENDS************************/
 
     @media only screen and (min-width: 600px) {
-        .job_list_page .jobs {
+        .floating_elements_list .floating_element {
             width: 45%;
         }
     }
     @media only screen and (min-width: 2000px) {
-        .job_list_page .jobs {
+        .floating_elements_list .floating_element {
             width: 25%;
         }
     }

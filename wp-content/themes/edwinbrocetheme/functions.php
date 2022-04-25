@@ -22,17 +22,17 @@ add_action('init', 'edwinbroce_theme_setup');
 
 function theme_custom_post_type(){
 	$job_labels	= array(
-		'name' => 'Jobs',
+		'name' => 'floating_element',
 		'singular' => 'Job',
 		'add_new' => 'Add Job',
-		'all_items' => 'All Jobs',
+		'all_items' => 'All floating_element',
 		'add_new_item' => 'Add Job',
 		'edit_item' => 'Edit Job',
 		'new_item' => 'New Job',
 		'view_item' => 'View Job',
 		'search_item' => 'Search Job',
-		'not_found' => 'No jobs found',
-		'not_found_in_trash' => 'No jobs found in trash',
+		'not_found' => 'No floating_element found',
+		'not_found_in_trash' => 'No floating_element found in trash',
 		'parent_item_colon' => 'Job Item'
 	);
 	$job_args = array(
@@ -56,7 +56,7 @@ function theme_custom_post_type(){
 			'revision'
 		)
 	);
-	register_post_type('jobs', $job_args);
+	register_post_type('floating_element', $job_args);
 
 	$proj_labels = array(
 		'name' => 'Projects',
@@ -132,7 +132,7 @@ function theme_custom_post_type(){
 
 	register_post_type('projects', $proj_args);
 	register_post_type('presentations', $pres_args);
-	register_post_type('jobs', $job_args);
+	register_post_type('floating_element', $job_args);
 }
 
 add_action('init', 'theme_custom_post_type');

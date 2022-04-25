@@ -59,7 +59,7 @@ function moveCameraAngle(x_gap, y_gap, max_gap) {
 }
 
 function setSceneHeight() {
-    let list_of_items = document.getElementsByClassName("jobs");
+    let list_of_items = document.getElementsByClassName("floating_element");
     let number_of_items = list_of_items.length;
     let item_z_index = parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue("--itemZ")
