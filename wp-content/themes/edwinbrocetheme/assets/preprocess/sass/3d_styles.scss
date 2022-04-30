@@ -100,22 +100,75 @@
     .floating_elements_list .floating_element:after {
         border-radius: 10px;
     }
-    @for $i from 1 through 10 {
-        .floating_element:nth-child(#{$i}) {
-            transform: translate3D(
-                4%,
-                -2%,
-                calc(var(--itemZ) * var(--cameraSpeed) * 1 * -1px)
-            );
+
+    // THE KEY TO EVERYTHING ------------------------------
+    /************ Put here values for variables depending on the device and its size ***/
+    @media only screen and (min-width: 600px) {
+        :root {
+            --elementXBase: 4%;
+            --elementYBase: -2%;
+            --elementXMultiplier: 0;
+            --elementYMultiplier: 0;
+            --elementZMultiplier: 1; //Determine how far back this element is from the one before
         }
     }
 
+    @media only screen and (max-width: 600px) {
+        :root {
+            --elementXBase: 4%;
+            --elementYBase: -2%;
+            --elementXMultiplier: 0;
+            --elementYMultiplier: 0;
+            --elementZMultiplier: 1; //Determine how far back this element is from the one before
+        }
+    }
+
+    :root {
+        //Default Values
+        --elementXBase: 4%;
+        --elementYBase: -2%;
+        --elementZBase: 0.1; //Determine how far back this element is from the one before
+        --elementXMultiplier: 1;
+        --elementYMultiplier: 1;
+        --backgroundColor: yellow;
+    }
+
+    .title_element {
+        --elementXBase: 4%;
+        --elementYBase: -2%;
+        --elementZBase: 0.1; //Determine how far back this element is from the one before
+        --elementXMultiplier: 1;
+        --elementYMultiplier: 1;
+        --backgroundColor: red;
+    }
+
+    .outskirt_element {
+        --elementXBase: 4%;
+        --elementYBase: -2%;
+        --elementZBase: 0.1; //Determine how far back this element is from the one before
+        --elementXMultiplier: 1;
+        --elementYMultiplier: 1;
+        --backgroundColor: green;
+    }
+
+    @for $i from 1 through 10 {
+        .floating_element:nth-child(#{$i}) {
+            transform: translate3D(
+                var(--elementXBase),
+                var(--elementYBase),
+                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+            );
+            background: var(--backgroundColor);
+        }
+    }
+
+    //CHANGE THIS CODE
     .floating_element:nth-child(2n) {
         left: 10vw;
     }
 
     .floating_element:nth-child(2n + 1) {
-        right: 10vw;
+        left: 10vw;
     }
 
     /*****************BACKGROUND CODE*************************/
@@ -131,7 +184,7 @@
     }
 
     /******************EXPERIMENTING BEGIN************************/
-    .floating_elements_list .floating_element {
+    .floating_elements_list .floating_element_with_background {
         background-image: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
         background-repeat: no-repeat;
         background-position: right top;
@@ -145,7 +198,7 @@
         animation-fill-mode: forwards;
     }
 
-    .floating_elements_list .floating_element:before {
+    .floating_elements_list .floating_element_with_background:before {
         content: "";
         background: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
         background-repeat: no-repeat;
