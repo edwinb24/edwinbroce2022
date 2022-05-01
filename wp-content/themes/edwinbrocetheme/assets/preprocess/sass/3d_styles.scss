@@ -133,7 +133,7 @@
         --backgroundColor: yellow;
     }
 
-    .title_element {
+    .title_element + .title_element {
         --elementXBase: 4%;
         --elementYBase: -2%;
         --elementZBase: 0.1; //Determine how far back this element is from the one before
@@ -142,10 +142,14 @@
         --backgroundColor: red;
     }
 
-    .outskirt_element {
+    .title_element + .title_element {
+        --elementZBase: 11111; //Determine how far back this element is from the one before
+    }
+
+    .outskirt_element:not(:first) {
         --elementXBase: 4%;
         --elementYBase: -2%;
-        --elementZBase: 0.1; //Determine how far back this element is from the one before
+        --elementZBase: 10; //Determine how far back this element is from the one before
         --elementXMultiplier: 1;
         --elementYMultiplier: 1;
         --backgroundColor: green;
@@ -156,7 +160,14 @@
             transform: translate3D(
                 var(--elementXBase),
                 var(--elementYBase),
-                calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+                calc(
+                    var(--itemZ) *
+                        var(--cameraSpeed) *
+                        #{$i} *
+                        -1px +
+                        0.1px *
+                        var(--elementZBase)
+                )
             );
             background: var(--backgroundColor);
         }
@@ -171,8 +182,6 @@
         left: 10vw;
     }
 
-    /*****************BACKGROUND CODE*************************/
-
     .scene_3d_element {
         transform-style: preserve-3d;
         position: absolute;
@@ -182,45 +191,6 @@
         left: 0;
         background-size: cover;
     }
-
-    /******************EXPERIMENTING BEGIN************************/
-    .floating_elements_list .floating_element_with_background {
-        background-image: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
-        background-repeat: no-repeat;
-        background-position: right top;
-        background-size: cover;
-        mask-image: url(https://i.imgur.com/AYJuRke.png);
-        mask-size: 3000% 100%;
-        animation-name: mask-playzero;
-        animation-duration: 2s;
-        animation-timing-function: steps(29);
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-
-    .floating_elements_list .floating_element_with_background:before {
-        content: "";
-        background: url(https://ik.imagekit.io/edwinb24/lighthouse_modified_Xvd5fdFvy.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648166331120);
-        background-repeat: no-repeat;
-        background-position: right top;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    @keyframes mask-playzero {
-        from {
-            mask-position: 0 0;
-        }
-        to {
-            mask-position: 100% 0;
-        }
-    }
-
-    /******************EXPERIMENTING ENDS************************/
 
     @media only screen and (min-width: 600px) {
         .floating_elements_list .floating_element {
