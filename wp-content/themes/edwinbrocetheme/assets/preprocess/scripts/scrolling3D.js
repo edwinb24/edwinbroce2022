@@ -89,4 +89,18 @@ function moveCamera() {
         "--cameraZ",
         window.pageYOffset + INITIAL_CAMERA_POSITION
     );
+    console.log("window.pageYOffset");
+    console.log(window.pageYOffset);
+
+    const elementNumber = parseInt((window.pageYOffset + 600) / 1800);
+    console.log(elementNumber);
+
+    const floatingElements = document.querySelectorAll(".floating_element");
+
+    for (let i = 0; i <= elementNumber; i++) {
+        const element = floatingElements[i];
+        console.log(`${i} => `, window.getComputedStyle(element).transform);
+        if (!element.classList.contains("show_floating_element"));
+        element.classList.add("show_floating_element");
+    }
 }
