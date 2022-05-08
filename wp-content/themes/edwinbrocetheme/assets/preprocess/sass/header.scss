@@ -65,3 +65,9 @@
     align-items: baseline;
     justify-content: center;
 }
+
+.social_media {
+    grid-area: social_media_menu;
+    display: flex;
+    align-items: flex-start;
+}

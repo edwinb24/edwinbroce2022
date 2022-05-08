@@ -100,7 +100,16 @@ function moveCamera() {
     for (let i = 0; i <= elementNumber; i++) {
         const element = floatingElements[i];
         console.log(`${i} => `, window.getComputedStyle(element).transform);
-        if (!element.classList.contains("show_floating_element"));
-        element.classList.add("show_floating_element");
+
+        if (
+            !element.classList.contains("show_floating_background_element") &&
+            element.classList.contains("floating_background_element")
+        )
+            element.classList.add("show_floating_background_element");
+        if (
+            !element.classList.contains("show_floating_text") &&
+            element.classList.contains("floating_text")
+        )
+            element.classList.add("show_floating_text");
     }
 }

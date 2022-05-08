@@ -1,6 +1,6 @@
 /* autoprefixer: off */
 
-.floating_elements_list .floating_element_with_background {
+.floating_elements_list .floating_background_element {
     background-repeat: no-repeat;
     background-position: right top;
     background-size: cover;
@@ -10,7 +10,7 @@
     width: 300px;
 }
 
-.show_floating_element {
+.show_floating_background_element {
     animation-name: mask-playzero;
     animation-duration: 2s;
     animation-timing-function: steps(29);
@@ -18,7 +18,11 @@
     animation-fill-mode: forwards;
 }
 
-.floating_elements_list .floating_element_with_background:before {
+.show_floating_text {
+    opacity: 1;
+}
+
+.floating_elements_list .floating_background_element:before {
     content: "";
     background: url("http://local.edwinbroce2022.com/wp-content/uploads/2020/01/home_page_photo_mobile.jpg");
     background-repeat: no-repeat;
@@ -39,6 +43,24 @@
     to {
         mask-position: 100% 0;
     }
+}
+
+.focus_elements_list {
+    display: grid;
+    padding: 15px;
+}
+
+.focus_elements_list li:nth-child(2n) {
+    margin-left: 45px;
+}
+
+.focus_elements_list li:nth-child(2n + 1) {
+    text-align: start;
+}
+
+.other_experience_list li:not(:first-child) {
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 /******************EXPERIMENTING BEGIN************************/

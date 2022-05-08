@@ -95,11 +95,6 @@ a:focus {
 }
 
 //Social Media Icons
-.social_media {
-    grid-area: social_media_menu;
-    display: flex;
-    align-items: flex-start;
-}
 
 nav.social_media a {
     transition: filter 0.4s linear, transform 0.4s;
