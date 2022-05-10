@@ -54,7 +54,7 @@
     justify-content: space-evenly;
 }
 #menu-main-menu li {
-    color: #d1d1d1;
+    color: var(--font-color);
     filter: grayscale(100%);
     transition: filter 1.2s;
 }

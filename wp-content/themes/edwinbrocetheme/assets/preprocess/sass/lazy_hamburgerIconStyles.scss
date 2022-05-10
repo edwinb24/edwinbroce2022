@@ -11,7 +11,7 @@
 .bar3 {
     width: 35px;
     height: 3px;
-    background-color: #efefef;
+    background-color: var(--font-color);
     margin: 7px 0;
     transition: 0.4s;
 }

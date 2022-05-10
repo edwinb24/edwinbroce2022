@@ -1,1 +1,1 @@
-:root{--main-color:#3d796f;--secundary-color:#001f52;--font-color:#040404;--secundary-font-color:#85c69b}
+:root{--main-color:rgb(24, 34, 41);--main-color_60:#3e4850;--main-color_30:#949fa9;--secundary-color:#c86202;--font-color:#ececec;--content-background:radial-gradient( ellipse at center, rgba(24, 34, 41, 0.95) 26%, rgba(24, 34, 41, 0.95) 100% ),url(https://grainy-gradients.vercel.app/noise.svg);--header-background:rgba(51, 51, 51, 0.99)}

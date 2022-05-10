@@ -12,6 +12,7 @@ a:focus {
     position: absolute;
     top: 25px;
     left: 12vw;
+    font-size: min(3em, 6vw);
 }
 
 .e_mail_section {
@@ -21,15 +22,20 @@ a:focus {
     align-items: baseline;
     text-align: start;
     padding-top: 15px;
+    justify-content: end;
+    padding-bottom: 30px;
+    color: var(--font-color);
+    font-size: min(2.4vw, 19px);
 }
 
 .e_mail_section a {
-    font-size: 2.75vw;
+    font-size: 1.8vw;
 }
 
 .header_menu {
-    background: rgba(0, 0, 0, 0.62);
+    background: var(--header-background);
     box-shadow: 0 3px 3px #666;
+    //
 }
 
 .menu-on {
@@ -41,8 +47,11 @@ a:focus {
     transition-duration: 0.5s;
     transition-delay: 0.7s;
     transition-timing-function: ease-in;
+    transition: color 0.5s, transform 0.7s;
     filter: unset;
     text-align: left;
+    color: var(--font-color);
+    font-size: min(4.8vw, 44px);
 }
 
 @for $i from 1 through 5 {
@@ -74,10 +83,6 @@ a:focus {
     right: 0px;
 }
 
-#menu-main-menu li {
-    color: #efefef;
-    transition: color 0.5s, transform 0.7s;
-}
 #menu-main-menu li:hover {
     color: #b7dbfc;
     transform: scale(1.1, 1.1);
@@ -144,7 +149,7 @@ nav.social_media .youtube_image {
     margin-top: -7px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 600px) {
     .header_menu {
         grid-template-areas:
             "main_menu"
@@ -154,6 +159,22 @@ nav.social_media .youtube_image {
         padding-bottom: 0;
     }
     .menu_main_menu_wrapper {
-        justify-content: flex-start;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    #menu-main-menu {
+        gap: 15px;
+    }
+    #menu-main-menu li {
+        text-align: center;
+        font-size: 2.1em;
+    }
+    .e_mail_section {
+        justify-content: end;
+        font-size: 4vw;
+    }
+    .e_mail_section a {
+        font-size: 0.9em;
     }
 }
